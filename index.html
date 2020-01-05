@@ -12,12 +12,13 @@
         <div id="app">
             <div class ="bot">
                 <div class="bot-image">
-                    <img src="">
+                    <img v-bind:src="image">
                 </div>
 
                 <div class="bot-info">
                     <h1>{{ bot }}</h1>
                     <p>{{ description }}</p>
+                    <a :href="link">Link</a>
                 </div>
             </div>
         </div>
