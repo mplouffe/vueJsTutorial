@@ -17,6 +17,9 @@
 
                 <div class="bot-info">
                     <h1>{{ bot }}</h1>
+                    <p v-if="incompleteParts > 5">Incomplete Bot</p>
+                    <p v-else-if="incompleteParts <= 5 && incompleteParts > 0">Nearly Complete</p>
+                    <p v-else>Bot Ready To Build</p>
                     <p>{{ description }}</p>
                     <a :href="link">Link</a>
                 </div>

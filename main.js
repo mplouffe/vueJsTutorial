@@ -4,6 +4,7 @@ var app = new Vue({
         bot: 'Robot_#000',
         description: 'A humanoid machine',
         image: './assets/vueBot.png',
-        link: 'linkurlsss'
+        link: 'linkurl',
+        incompleteParts: 0
     }
 });
