@@ -5,6 +5,21 @@ var app = new Vue({
         description: 'A humanoid machine',
         image: './assets/vueBot.png',
         link: 'linkurl',
-        incompleteParts: 0
+        incompleteParts: 10,
+        details: ["100 Power", "50 Weight", "30 Speed"],
+        variants: [
+            {
+                variantId: 000,
+                variantColor: "blue"
+            },
+            {
+                variantId: 001,
+                variantColor: "green"
+            }
+        ]
     }
 });
+
+var setDetails = function() {
+    app._data.details = ["100 Power", "50 Weight", "30 Speed"];
+}

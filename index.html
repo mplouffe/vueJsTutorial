@@ -22,6 +22,14 @@
                     <p v-else>Bot Ready To Build</p>
                     <p>{{ description }}</p>
                     <a :href="link">Link</a>
+
+                    <ul>
+                        <li v-for="detail in details">{{ detail }}</li>
+                    </ul>
+
+                    <div v-for="variant in variants" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
                 </div>
             </div>
         </div>
