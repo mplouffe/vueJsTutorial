@@ -34,7 +34,11 @@
                         @mouseover="setBotImage(variant.variantImage)" >
                     </div>
 
-                    <button @click="addToCart">Add to Bot</button>
+                    <button @click="addToCart"
+                        :disabled="incompleteParts <= 0"
+                        :class="{ disabledButton: incompleteParts <= 0 }">
+                        Add to Bot
+                    </button>
 
                     <div class="cart">
                         <p>Cart({{cart}})</p>
