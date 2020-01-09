@@ -16,9 +16,8 @@
                 </div>
 
                 <div class="bot-info">
-                    <h1>{{ bot }}</h1>
-                    <p v-if="incompleteParts > 5">Incomplete Bot</p>
-                    <p v-else-if="incompleteParts <= 5 && incompleteParts > 0">Nearly Complete</p>
+                    <h1>{{ title }}</h1>
+                    <p v-if="incompleteParts">Incomplete Bot</p>
                     <p v-else>Bot Ready To Build</p>
                     <p>{{ description }}</p>
                     <a :href="link">Link</a>
@@ -27,16 +26,16 @@
                         <li v-for="detail in details">{{ detail }}</li>
                     </ul>
 
-                    <div v-for="variant in variants"
+                    <div v-for="(variant, index) in variants"
                         :key="variant.variantId"
                         class="color-box"
                         :style="{ backgroundColor: variant.variantColor }"
-                        @mouseover="setBotImage(variant.variantImage)" >
+                        @mouseover="setBotImage(index)" >
                     </div>
 
                     <button @click="addToCart"
-                        :disabled="incompleteParts <= 0"
-                        :class="{ disabledButton: incompleteParts <= 0 }">
+                        :disabled="incompleteParts"
+                        :class="{ disabledButton: incompleteParts }">
                         Add to Bot
                     </button>
 
